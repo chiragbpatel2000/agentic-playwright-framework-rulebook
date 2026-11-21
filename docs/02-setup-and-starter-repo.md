@@ -282,15 +282,16 @@ It should load `ai-native-workflow`, explore with `playwright-cli`, and stop at 
 
 ## Troubleshooting
 
-| Symptom                                              | Fix                                                                                                               |
-| ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `Executable doesn't exist ... chromium`              | Run `npx playwright install chromium`                                                                             |
-| `Node >= 22 required`                                | Upgrade Node (Step 2)                                                                                             |
-| Smoke test fails at `setup-api` with a network error | Check `env/.env.dev` exists and has the 4 values; try opening the demo site in a browser (it's occasionally down) |
-| UI setup blocked by "Verify you are human"           | The demo shop's Cloudflare check. Retry from a home network, or use `npm run test:api` meanwhile                  |
-| `playwright-cli: command not found`                  | Run `npm run setup:check` again; on Windows use Git Bash                                                          |
-| Commit blocked by Husky                              | Read the message: it names the rule. Fix the code, never bypass it with `--no-verify`                             |
-| `npm run lint` fails only on formatting              | Run `npm run lint:fix`                                                                                            |
+| Symptom                                               | Fix                                                                                                                                                                                                                                                  |
+| ----------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Executable doesn't exist ... chromium`               | Run `npx playwright install chromium`                                                                                                                                                                                                                |
+| `Node >= 22 required`                                 | Upgrade Node (Step 2)                                                                                                                                                                                                                                |
+| Smoke test fails at `setup-api` with a network error  | Check `env/.env.dev` exists and has the 4 values; try opening the demo site in a browser (it's occasionally down)                                                                                                                                    |
+| `setup-api` fails with `Expected: 200, Received: 423` | The demo shop has temporarily **locked** its shared public account (HTTP 423 means Locked), usually after many failed logins from people around the world. It isn't your code. Wait an hour, or move on to Guide 3, which uses your own app settings |
+| UI setup blocked by "Verify you are human"            | The demo shop's Cloudflare check. Retry from a home network, or use `npm run test:api` meanwhile                                                                                                                                                     |
+| `playwright-cli: command not found`                   | Run `npm run setup:check` again; on Windows use Git Bash                                                                                                                                                                                             |
+| Commit blocked by Husky                               | Read the message: it names the rule. Fix the code, never bypass it with `--no-verify`                                                                                                                                                                |
+| `npm run lint` fails only on formatting               | Run `npm run lint:fix`                                                                                                                                                                                                                               |
 
 ---
 
