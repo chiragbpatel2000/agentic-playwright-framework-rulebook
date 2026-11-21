@@ -19,6 +19,7 @@
     "include": ["*.ts", "**/*.ts", "**/*.mts"],
     "exclude": [
         "node_modules",
+        "booking-app",
         "dist",
         "playwright-report",
         "test-results",

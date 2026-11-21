@@ -1,0 +1,30 @@
+{
+    "name": "willow-lodge",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Willow Lodge: a small B&B booking app with a REST API, built as a target for Playwright test automation.",
+    "type": "module",
+    "scripts": {
+        "build": "esbuild client/pages/*.ts --bundle --format=esm --target=es2022 --outdir=public/js --log-level=warning",
+        "start": "npm run build && tsx src/server.ts",
+        "dev": "npm run build && tsx watch src/server.ts",
+        "typecheck": "tsc --noEmit",
+        "test": "tsx --test test/*.test.ts"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "dotenv": "^18.0.10",
+        "express": "^5.3.0",
+        "zod": "^4.6.7"
+    },
+    "devDependencies": {
+        "@types/express": "^5.0.6",
+        "@types/node": "^26.6.6",
+        "esbuild": "^0.28.2",
+        "tsx": "^4.23.15",
+        "typescript": "^7.0.2"
+    },
+    "engines": {
+        "node": ">=22"
+    }
+}

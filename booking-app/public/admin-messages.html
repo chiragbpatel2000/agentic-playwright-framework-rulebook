@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Messages | Willow Lodge admin</title>
+        <link rel="stylesheet" href="/css/styles.css" />
+        <script type="module" src="/js/admin-messages.js"></script>
+    </head>
+    <body class="admin">
+        <header class="site-header">
+            <a class="brand" href="/admin/rooms">Willow Lodge admin</a>
+            <nav aria-label="Admin">
+                <a href="/admin/rooms">Rooms</a>
+                <a href="/admin/bookings">Bookings</a>
+                <a href="/admin/messages"
+                    >Messages
+                    <span id="unread-badge" class="badge" hidden></span
+                ></a>
+                <a href="/">View site</a>
+                <button type="button" id="logout" class="button-ghost">
+                    Log out
+                </button>
+            </nav>
+        </header>
+        <main class="section">
+            <h1>Messages</h1>
+            <div
+                id="page-error"
+                class="alert alert-error"
+                role="alert"
+                hidden
+            ></div>
+            <div
+                id="page-success"
+                class="alert alert-success"
+                role="status"
+                hidden
+            ></div>
+            <p id="empty" class="muted" hidden>No messages yet.</p>
+            <ul
+                id="message-list"
+                class="message-list"
+                aria-label="Messages"
+            ></ul>
+        </main>
+    </body>
+</html>

@@ -16,11 +16,40 @@ const environmentPath = `./env/.env.${environment}`;
 dotenv.config({ path: environmentPath, quiet: true });
 
 /**
+ * Willow Lodge (booking-app/) is the app under test when APP_URL points at
+ * localhost. Playwright then starts it before the tests and stops it after.
+ * The app's admin login comes from APP_EMAIL / APP_PASSWORD, so the env file
+ * stays the single source of truth for credentials.
+ */
+const APP_START_TIMEOUT_MS = 60_000;
+const appUrl = process.env.APP_URL ?? '';
+const runsLocalApp = /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?\/?$/.test(
+    appUrl
+);
+const localAppServer = runsLocalApp
+    ? {
+          command: 'npm --prefix booking-app start',
+          url: `${appUrl.replace(/\/$/, '')}/api/health`,
+          reuseExistingServer: !process.env.CI,
+          timeout: APP_START_TIMEOUT_MS,
+          env: {
+              PORT: new URL(appUrl).port || '80',
+              ADMIN_EMAIL: process.env.APP_EMAIL ?? '',
+              ADMIN_PASSWORD: process.env.APP_PASSWORD ?? '',
+              ENABLE_TEST_RESET: 'true',
+          },
+      }
+    : undefined;
+
+/**
  * Playwright Test Configuration
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
     testDir: './tests',
+
+    /* Start Willow Lodge first when APP_URL is localhost (see above) */
+    webServer: localAppServer,
 
     /* Run tests in files in parallel */
     fullyParallel: true,
