@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Rooms | Willow Lodge admin</title>
+        <link rel="stylesheet" href="/css/styles.css" />
+        <script type="module" src="/js/admin-rooms.js"></script>
+    </head>
+    <body class="admin">
+        <header class="site-header">
+            <a class="brand" href="/admin/rooms">Willow Lodge admin</a>
+            <nav aria-label="Admin">
+                <a href="/admin/rooms">Rooms</a>
+                <a href="/admin/bookings">Bookings</a>
+                <a href="/admin/messages"
+                    >Messages
+                    <span id="unread-badge" class="badge" hidden></span
+                ></a>
+                <a href="/">View site</a>
+                <button type="button" id="logout" class="button-ghost">
+                    Log out
+                </button>
+            </nav>
+        </header>
+        <main class="section">
+            <h1>Rooms</h1>
+            <div
+                id="page-error"
+                class="alert alert-error"
+                role="alert"
+                hidden
+            ></div>
+            <div
+                id="page-success"
+                class="alert alert-success"
+                role="status"
+                hidden
+            ></div>
+            <table class="table">
+                <caption class="sr-only">
+                    Rooms
+                </caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Guests</th>
+                        <th scope="col">Accessible</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="room-rows"></tbody>
+            </table>
+
+            <h2 id="form-heading">Add a room</h2>
+            <div
+                id="form-errors"
+                class="alert alert-error"
+                role="alert"
+                hidden
+            ></div>
+            <form
+                id="room-form"
+                class="form form-grid"
+                novalidate
+                aria-labelledby="form-heading"
+            >
+                <label>Room name <input name="name" /></label>
+                <label
+                    >Room type
+                    <select name="type">
+                        <option>Single</option>
+                        <option selected>Double</option>
+                        <option>Twin</option>
+                        <option>Family</option>
+                        <option>Suite</option>
+                    </select>
+                </label>
+                <label
+                    >Price per night (£)
+                    <input name="pricePerNight" type="number" min="1" max="999"
+                /></label>
+                <label
+                    >Max guests
+                    <input
+                        name="maxGuests"
+                        type="number"
+                        min="1"
+                        max="6"
+                        value="2"
+                /></label>
+                <label class="check"
+                    ><input name="accessible" type="checkbox" /> Step-free
+                    access</label
+                >
+                <label
+                    >Features (comma separated)
+                    <input name="features" placeholder="Wi-Fi, Garden view"
+                /></label>
+                <label class="wide"
+                    >Description
+                    <textarea name="description" rows="3"></textarea>
+                </label>
+                <div class="wide actions">
+                    <button type="submit" class="button" id="save-room">
+                        Add room
+                    </button>
+                    <button
+                        type="button"
+                        class="button-ghost"
+                        id="cancel-edit"
+                        hidden
+                    >
+                        Cancel edit
+                    </button>
+                </div>
+            </form>
+        </main>
+    </body>
+</html>

@@ -3,6 +3,7 @@
 > Series: Building an Agentic Playwright Test Automation Framework
 > Previous: [Guide 2: Setup, first green run and CI](02-setup-and-starter-repo.md)
 > App under test: [Restful Booker Platform](https://automationintesting.online), a hotel booking demo built for practising test automation.
+> Prefer an app you own and run locally? Use [Guide 5](05-build-your-own-app-under-test.md) (Willow Lodge) alongside this guide.
 
 ## What you will build
 

@@ -1,0 +1,18 @@
+{
+    // Type-checks the server (src), the browser code (client), the code they
+    // share (shared) and the tests. tsx and esbuild run the code; tsc only checks it.
+    "compilerOptions": {
+        "target": "ES2022",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "lib": ["ES2022", "DOM", "DOM.Iterable"],
+        "types": ["node"],
+        "strict": true,
+        "noUncheckedIndexedAccess": true,
+        "noEmit": true,
+        "skipLibCheck": true,
+        "allowImportingTsExtensions": true,
+        "verbatimModuleSyntax": true
+    },
+    "include": ["src", "client", "shared", "test"]
+}

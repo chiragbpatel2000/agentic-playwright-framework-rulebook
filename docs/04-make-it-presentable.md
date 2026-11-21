@@ -329,3 +329,4 @@ Pin the top three as your **most relevant** skills. Choose the Workday-led ones,
 - **Extend the suite:** booking end-to-end (`@e2e`) with cleanup, and a `@destructive` branding test run serially.
 - **Show data skills:** add an API test that creates a booking, then **reconciles** it against the report endpoint. That's reconciliation in miniature, and a great talking point.
 - **Teach it:** turn one guide into a LinkedIn article or a short talk at a Workday or testing meetup.
+- **Own the app too:** [Guide 5](05-build-your-own-app-under-test.md) adds Willow Lodge, a booking app in this repo that the framework can test locally and in CI.

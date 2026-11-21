@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Willow Lodge | B&amp;B in the countryside</title>
+        <link rel="stylesheet" href="/css/styles.css" />
+        <script type="module" src="/js/home.js"></script>
+    </head>
+    <body>
+        <header class="site-header">
+            <a class="brand" href="/">Willow Lodge</a>
+            <nav aria-label="Main">
+                <a href="#rooms">Rooms</a>
+                <a href="#contact">Contact</a>
+                <a href="/admin">Admin</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h1>Slow mornings at Willow Lodge</h1>
+                <p>
+                    Three rooms, one orchard, and breakfast from the garden.
+                    Pick a room, choose your dates, and we'll put the kettle on.
+                </p>
+                <a class="button" href="#rooms">See our rooms</a>
+            </section>
+
+            <section id="rooms" class="section" aria-labelledby="rooms-heading">
+                <h2 id="rooms-heading">Our rooms</h2>
+                <p id="rooms-loading">Loading rooms…</p>
+                <ul id="room-list" class="room-grid" aria-label="Rooms"></ul>
+            </section>
+
+            <section
+                id="contact"
+                class="section contact"
+                aria-labelledby="contact-heading"
+            >
+                <h2 id="contact-heading">Get in touch</h2>
+                <div
+                    id="contact-errors"
+                    class="alert alert-error"
+                    role="alert"
+                    hidden
+                ></div>
+                <div
+                    id="contact-success"
+                    class="alert alert-success"
+                    role="status"
+                    hidden
+                ></div>
+                <form id="contact-form" class="form" novalidate>
+                    <label
+                        >Name <input name="name" autocomplete="name"
+                    /></label>
+                    <label
+                        >Email
+                        <input name="email" type="email" autocomplete="email"
+                    /></label>
+                    <label
+                        >Phone
+                        <input name="phone" type="tel" autocomplete="tel"
+                    /></label>
+                    <label>Subject <input name="subject" /></label>
+                    <label
+                        >Message
+                        <textarea name="description" rows="5"></textarea>
+                    </label>
+                    <button type="submit" class="button">Send message</button>
+                </form>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>
+                Willow Lodge, Orchard Lane. A demo app for practising test
+                automation; no real bookings are made.
+            </p>
+        </footer>
+    </body>
+</html>

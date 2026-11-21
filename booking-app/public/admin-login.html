@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Admin log in | Willow Lodge</title>
+        <link rel="stylesheet" href="/css/styles.css" />
+        <script type="module" src="/js/admin-login.js"></script>
+    </head>
+    <body>
+        <header class="site-header">
+            <a class="brand" href="/">Willow Lodge</a>
+            <nav aria-label="Main"><a href="/">Back to the site</a></nav>
+        </header>
+        <main class="section narrow">
+            <h1>Admin log in</h1>
+            <div
+                id="login-error"
+                class="alert alert-error"
+                role="alert"
+                hidden
+            ></div>
+            <form id="login-form" class="form" novalidate>
+                <label
+                    >Email
+                    <input name="email" type="email" autocomplete="username"
+                /></label>
+                <label
+                    >Password
+                    <input
+                        name="password"
+                        type="password"
+                        autocomplete="current-password"
+                /></label>
+                <button type="submit" class="button">Log in</button>
+            </form>
+        </main>
+    </body>
+</html>
